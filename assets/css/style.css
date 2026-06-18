@@ -1,0 +1,884 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0D0D2B; 
+    color: #FFFFFF;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-shadow: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ШАПКА */
+.header {
+    padding: 30px 0;
+    background-color: transparent;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    font-size: 16px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #3671E9;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+}
+
+.btn-login {
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.btn-login:hover {
+    color: #3671E9;
+}
+
+.divider {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-register {
+    background-color: #3671E9;
+    padding: 12px 32px;
+    border-radius: 32px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #2b5bc7;
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 60px 0 100px 0;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 580px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 4px 16px 4px 4px;
+    border-radius: 32px;
+    margin-bottom: 24px;
+}
+
+.badge-discount {
+    background-color: #FFFFFF;
+    color: #0D0D2B;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 16px;
+    border-radius: 32px;
+    margin-right: 16px;
+    letter-spacing: 0.04em;
+}
+
+.badge-text {
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    font-size: 16px;
+    color: #E0E0E0;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 430px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    background-color: #3671E9;
+    padding: 16px 32px;
+    border-radius: 32px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2b5bc7;
+}
+
+.btn-arrow {
+    background-color: #FFFFFF;
+    color: #0D0D2B;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.hero-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* STATS */
+.stats {
+    padding: 60px 0;
+    background-color: transparent;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.stats-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 1;
+}
+
+.stats-icon-box {
+    /* Фоновий круг повністю прибрано */
+    background-color: transparent; 
+    
+    /* Скидаємо великі фіксовані розміри */
+    width: auto;
+    height: auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-icon {
+    /* Можна трішки збільшити самі іконки, якщо без круга вони здадуться малими */
+    max-width: 70px; 
+    height: auto;
+}
+.stats-number {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.stats-text {
+    font-size: 16px;
+    color: #E0E0E0;
+}
+
+/* WHY CHOOSE US */
+.why-choose {
+    padding: 100px 0;
+    background-color: transparent;
+}
+
+.why-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+.why-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.why-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.why-content {
+    flex: 1;
+    max-width: 480px;
+}
+
+.why-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.why-description {
+    font-size: 16px;
+    color: #E0E0E0;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #3671E9;
+    color: #FFFFFF;
+    padding: 16px 32px;
+    border-radius: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #2b5bc7;
+}
+
+/* CALCULATOR SECTION */
+.calc-section {
+    padding: 80px 0 0 0;
+    background-color: #0D0D2B;
+    text-align: center;
+}
+
+.calc-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #FFFFFF;
+}
+
+.calc-subtitle {
+    font-size: 16px;
+    color: #E0E0E0;
+    line-height: 1.6;
+    margin-bottom: 60px;
+}
+
+.calc-box-container {
+    position: relative;
+    z-index: 10;
+    margin-bottom: -150px; 
+}
+
+.calc-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.calc-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 24px;
+    margin-bottom: 48px;
+}
+
+.calc-input {
+    flex: 2;
+    border: none;
+    border-bottom: 1px solid #BDBDBD;
+    font-size: 20px;
+    padding: 12px 0;
+    color: #0D0D2B;
+    outline: none;
+    background: transparent;
+}
+
+.calc-select {
+    border: none;
+    border-bottom: 1px solid #BDBDBD;
+    font-size: 20px;
+    padding: 12px 10px;
+    background: transparent;
+    color: #0D0D2B;
+    outline: none;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+.btn-calc {
+    background-color: #3671E9;
+    color: #FFFFFF;
+    border: none;
+    padding: 16px 36px;
+    border-radius: 32px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-calc:hover {
+    background-color: #2b5bc7;
+}
+
+.calc-result {
+    display: flex;
+    flex-direction: column;
+}
+
+.result-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #3671E9;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+}
+
+.result-value {
+    font-size: 40px;
+    font-weight: 700;
+    color: #0D0D2B;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#usd-val {
+    color: #3671E9;
+    margin-left: 15px;
+}
+
+.result-note {
+    font-size: 16px;
+    color: #828282;
+}
+
+/* WHITE SPACE SECTION */
+.white-space-section {
+    background-color: #F8F9FA;
+    padding: 300px 0 100px 0; /* Збільшили відступ, щоб текст «відлетів» від картки вниз */
+    text-align: center;
+}
+
+.white-section-title {
+    color: #0D0D2B;
+    font-size: 40px;
+    font-weight: 700;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+.crypto-cards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 45px;
+    margin-top: 64px;
+}
+
+/* Базова неактивна картка (біла) */
+.crypto-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 48px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+    /* Плавний перехід для анімації збільшення та кольору */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.crypto-icon-box {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crypto-icon {
+    max-width: 100%;
+    height: auto;
+}
+
+.crypto-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0D0D2B;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.crypto-ticker {
+    font-size: 18px;
+    font-weight: 400;
+    color: #BDBDBD;
+    text-transform: uppercase;
+}
+
+.crypto-text {
+    font-size: 16px;
+    color: #828282;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 280px;
+}
+
+/* Кнопка всередині картки за замовчуванням (коли картка біла) */
+.crypto-card .btn-card-active {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #E0E0E0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3671E9;
+    margin-top: auto;
+    background: transparent;
+    transition: all 0.4s ease;
+}
+
+/* Ховаємо текст кнопки "Start mining", коли картка неактивна */
+.crypto-card .btn-card-active .btn-text {
+    display: none;
+}
+
+.crypto-card .btn-card-active .btn-arrow-small {
+    background: transparent;
+    color: #3671E9;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+/* АКТИВНИЙ СТАН КАРТКИ (при натисканні) */
+.crypto-card.active-card {
+    background-color: #2B076E;
+    box-shadow: 0px 20px 40px rgba(43, 7, 110, 0.2);
+    /* АНІМАЦІЯ ЗБІЛЬШЕННЯ */
+    transform: scale(1.05); 
+    z-index: 2;
+}
+
+.crypto-card.active-card .crypto-name {
+    color: #FFFFFF;
+}
+
+.crypto-card.active-card .crypto-ticker {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.crypto-card.active-card .crypto-text {
+    color: #FFFFFF;
+}
+
+/* Перетворення кнопки на велику синю кнопку, коли картка стає активною */
+.crypto-card .btn-card-active {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #E0E0E0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3671E9;
+    margin-top: auto; /* Виштовхує в самий вниз */
+    background: transparent;
+    cursor: pointer;
+    /* Додаємо анімацію для властивостей, які змінюються */
+    transition: width 0.3s ease, height 0.3s ease, padding 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Приховуємо текст кнопки, коли вона кругла */
+.crypto-card .btn-card-active .btn-text {
+    display: none;
+    white-space: nowrap;
+}
+
+/* Стрілка всередині круглого стану */
+.crypto-card .btn-card-active .btn-arrow-small {
+    background: transparent;
+    color: #3671E9;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* ======================================================= */
+/* АКТИВНИЙ СТАН КНОПКИ (коли картка стала темно-синьою) */
+/* ======================================================= */
+.crypto-card.active-card .btn-card-active {
+    width: 200px; /* Задаємо фіксовану ширину для овалу, щоб текст вліз */
+    height: 64px; /* ВИСОТА ЗАЛИШАЄТЬСЯ ТОЧНО ТАКОЮ Ж (64px), ЯК І У КРУГЛОЇ КНОПКИ */
+    border: none;
+    border-radius: 32px;
+    background-color: #3671E9;
+    color: #FFFFFF;
+    padding: 0 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between; /* Текст ліворуч, стрілка праворуч */
+    gap: 12px;
+}
+
+/* Показуємо текст кнопки в активному стані */
+.crypto-card.active-card .btn-card-active .btn-text {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Біле коло навколо стрілки в активному стані */
+.crypto-card.active-card .btn-card-active .btn-arrow-small {
+    background-color: #FFFFFF;
+    color: #3671E9;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+
+/* ШАБЛОН ДЛЯ СВІТЛОЇ СЕКЦІЇ */
+.white-space-section {
+    background-color: #F8F9FA;
+    padding: 300px 0 100px 0;
+    text-align: center;
+}
+
+.white-section-title {
+    color: #0D0D2B;
+    font-size: 40px;
+    font-weight: 700;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+.features-section {
+    padding: 100px 0;
+    background-color: #0D0D2B; /* Повертаємо фірмовий темний фон */
+}
+
+.features-main-title {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 120px auto;
+    line-height: 1.4;
+}
+
+/* Базовий рядок для шахматки */
+.feature-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 120px; /* Відступ між блоками */
+}
+
+/* Клас-модифікатор для розвороту колонок (шахматка) */
+.feature-row.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text-box {
+    flex: 1;
+    max-width: 480px;
+}
+
+.feature-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 24px;
+}
+
+.feature-desc {
+    font-size: 16px;
+    color: #E0E0E0;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.feature-img-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* СТИЛІ СИНЬОЇ ПЛАШКИ (CTA) */
+.cta-blue-box {
+    background: linear-gradient(135deg, #3671E9 0%, #2B5BC7 100%);
+    border-radius: 16px;
+    padding: 48px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-top: 60px;
+    box-shadow: 0px 20px 40px rgba(54, 113, 233, 0.15);
+}
+
+.cta-text-side {
+    flex: 1;
+    max-width: 440px;
+}
+
+.cta-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.cta-desc {
+    font-size: 16px;
+    color: #FFFFFF;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.cta-form-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 560px;
+}
+
+.cta-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 18px;
+    color: #FFFFFF;
+    padding: 12px 0;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.cta-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.cta-input:focus {
+    border-color: #FFFFFF;
+}
+
+.btn-subscribe {
+    background-color: #FFFFFF;
+    color: #0D0D2B;
+    border: none;
+    padding: 16px 36px;
+    border-radius: 32px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.btn-subscribe:hover {
+    background-color: #F8F9FA;
+    transform: translateY(-2px);
+}
+.footer {
+    background-color: #0D0D2B; /* Темний фон, єдиний з попередньою секцією */
+    padding: 80px 0 60px 0;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-logo-col {
+    flex: 1.2; /* Робимо колонку з лого трохи ширшою */
+}
+
+.footer-payments-col {
+    flex: 2; /* Колонка з платіжками найбільша */
+    max-width: 360px;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #FFFFFF;
+}
+
+.footer-title-large {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    color: #FFFFFF;
+}
+
+.footer-links display: flex;
+.footer-links flex-direction: column;
+.footer-links gap: 16px;
+
+.footer-links a {
+    color: #F2F2F2;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #3671E9;
+}
+
+/* Картки платіжних систем */
+.payment-systems {
+    display: flex;
+    gap: 24px;
+}
+
+.payment-card {
+    /* Робимо один загальний напівпрозорий фон для картки */
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    width: 96px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Прибираємо будь-який внутрішній фон або рамки безпосередньо з картинок */
+.payment-card img {
+    max-width: 70%;
+    max-height: 70%;
+    height: auto;
+    object-fit: contain;
+    background: transparent !important; /* Насильно прибираємо фон картинки */
+    background-color: transparent !important;
+}
+
+/* Ефект при наведенні мишкою — картка стає трохи яскравішою */
+.payment-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* НИЖНЯ ЧАСТИНА ФУТЕРА */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 40px;
+}
+
+.copyright {
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.social-links {
+    display: flex;
+    gap: 32px;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: translateY(-3px);
+}
