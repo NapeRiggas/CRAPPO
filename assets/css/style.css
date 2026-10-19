@@ -998,3 +998,228 @@ ul {
     font-weight: 600;
     color: #0d0d2b;
 }
+/* Ряд карток */
+.products-section .cards-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px 80px 15px;
+}
+
+/* Базова картка (біла) */
+.products-section .crypto-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 48px 24px;
+    flex: 1;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* Активна картка (темно-фіолетова) */
+.products-section .crypto-card.active {
+    background-color: #2b076e;
+    box-shadow: 0px 20px 40px rgba(43, 7, 110, 0.25);
+}
+
+/* Іконки криптовалют */
+.crypto-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.btc-icon { background-color: #f7931a; }
+.eth-icon { background-color: #3671e9; }
+.ltc-icon { background-color: #345d9d; }
+
+/* Назва та тікер */
+.products-section .crypto-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #0d0d2b;
+}
+
+.products-section .crypto-card.active .crypto-name {
+    color: #ffffff;
+}
+
+.crypto-ticker {
+    font-size: 14px;
+    font-weight: 500;
+    color: #bdbdbd;
+}
+
+.products-section .crypto-card.active .crypto-ticker {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Ціна */
+.plan-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3671e9;
+    margin: 0 0 16px 0;
+}
+
+.products-section .crypto-card.active .plan-price {
+    color: #ffffff;
+}
+
+.plan-price span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #828282;
+}
+
+.products-section .crypto-card.active .plan-price span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Опис */
+.products-section .crypto-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #828282;
+    margin-bottom: 32px;
+}
+
+.products-section .crypto-card.active .crypto-description {
+    color: #ffffff;
+}
+
+/* Кнопка-стрілочка для звичайних карток */
+.products-section .crypto-card .btn-card-action {
+    margin-top: auto;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #3671e9;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.products-section .crypto-card .btn-card-action:hover {
+    border-color: #3671e9;
+    background-color: rgba(54, 113, 233, 0.05);
+}
+
+/* Велика синя кнопка для активної картки */
+.products-section .crypto-card.active .btn-card-action {
+    background-color: #3671e9;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 14px 28px;
+    border-radius: 32px;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+/* Кольори для іконок нових послуг */
+.icon-cloud { background-color: #3671e9; }
+.icon-stake { background-color: #f7931a; }
+.icon-server { background-color: #2b076e; border: 1px solid rgba(255, 255, 255, 0.15); }
+
+/* Клік по всій картці виглядає природно */
+.products-section .crypto-card .btn-card-action {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+    border: 2px solid #E0E0E0 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin-top: auto !important;
+    overflow: hidden !important; /* Обрізає будь-що зайве */
+    transition: all 0.35s ease !important;
+}
+
+/* ЗАБОРОНЯЄМО тексту показуватися в круглій кнопці */
+.products-section .crypto-card .btn-card-action .btn-text {
+    display: none !important;
+}
+
+/* Стрілочка по центру */
+.products-section .crypto-card .btn-card-action .arrow-icon {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: #3671E9 !important;
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+
+/* 2. АКТИВНИЙ СТАН: Картка вибрана (.active) */
+.products-section .crypto-card.active {
+    background-color: #2B076E !important;
+    transform: scale(1.05) !important; /* Картка стає більшою */
+    box-shadow: 0px 25px 50px rgba(43, 7, 110, 0.4) !important;
+    z-index: 2 !important;
+}
+
+/* Кнопка розгортається у великий синій овал */
+.products-section .crypto-card.active .btn-card-action {
+    width: 220px !important;
+    max-width: 220px !important;
+    height: 68px !important;
+    background-color: #3671E9 !important;
+    border: none !important;
+    border-radius: 34px !important;
+    padding: 0 16px 0 24px !important;
+    justify-content: space-between !important;
+    box-shadow: 0px 10px 25px rgba(54, 113, 233, 0.4) !important;
+    transform: scale(1.03) !important; /* Кнопка теж стає трохи більшою */
+}
+
+/* Текст Select Product з'являється тільки тут */
+.products-section .crypto-card.active .btn-card-action .btn-text {
+    display: inline-block !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    white-space: nowrap !important;
+}
+
+/* Стрілочка береться в біле коло */
+.products-section .crypto-card.active .btn-card-action .arrow-icon {
+    background-color: #FFFFFF !important;
+    color: #3671E9 !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: 50% !important;
+    font-size: 18px !important;
+}
