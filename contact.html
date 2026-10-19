@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRAPPO - Contact Us</title>
+    <!-- Підключення твого CSS файлу -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-dark">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/icons/logot.svg" alt="CRAPPO" class="logo-img">
+                <span>CRAPPO</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="#" class="nav-link">Features</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link active-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-login">Login</a>
+                <span class="divider">|</span>
+                <a href="#" class="btn-register">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Content -->
+    <main class="page-content">
+        <section class="subpage-hero">
+            <div class="container">
+                <h1 class="subpage-title">Get in Touch</h1>
+                <p class="subpage-subtitle">Have questions about hash rates or custom pool integrations? Our team is available 24/7.</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="calc-card" style="max-width: 650px;">
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                        <div class="form-field">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="calc-input" placeholder="e.g. Alex Miller" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="calc-input" placeholder="name@domain.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="calc-input" rows="4" placeholder="How can we help you?" style="resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn-calc" style="width: 100%; border: none; cursor: pointer; margin-top: 15px;">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="copyright">©2021 CRAPPO. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
