@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRAPPO - Mining & Investment Products</title>
-    <!-- Підключення твого CSS файлу -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,7 +22,7 @@
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="products.html" class="nav-link active-link">Products</a></li>
-                    <li><a href="#" class="nav-link">Features</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
@@ -36,57 +35,56 @@
         </div>
     </header>
 
-    <!-- Products Content -->
+    <!-- Main Content -->
     <main class="page-content">
         <section class="subpage-hero">
             <div class="container">
-                <h1 class="subpage-title">Mining & Investment Plans</h1>
-                <p class="subpage-subtitle">Choose the package that fits your investment strategy and start generating crypto yields today.</p>
+                <h1 class="subpage-title">Investment & Mining Solutions</h1>
+                <p class="subpage-subtitle">Select a specialized crypto asset product tailored to your risk profile and desired yield.</p>
             </div>
         </section>
 
+        <!-- Секція з новими послугами -->
         <section class="products-section">
             <div class="container">
                 <div class="cards-grid">
-                    <!-- Starter Plan -->
+                    
+                    <!-- Продукт 1: Cloud Mining (Хмарний майнінг) -->
                     <div class="crypto-card">
-                        <h2 class="crypto-name">Starter Rig</h2>
-                        <div class="plan-price">$299 <span>/ contract</span></div>
-                        <p class="crypto-description">Ideal for entry-level mining with zero setup hassle and daily automated payouts.</p>
-                        <ul class="plan-features">
-                            <li>✓ Hashrate: 15 TH/s</li>
-                            <li>✓ Maintenance: Free 30 days</li>
-                            <li>✓ 24/7 Monitoring</li>
-                        </ul>
-                        <a href="#" class="btn-card-action"><span>Choose Plan</span><span class="arrow-icon">→</span></a>
+                        <div class="crypto-icon icon-cloud">☁️</div>
+                        <h2 class="crypto-name">Cloud Mining <span class="crypto-ticker">HASH</span></h2>
+                        <div class="plan-price">$199 <span>/ min plan</span></div>
+                        <p class="crypto-description">Rented computational power for instant Bitcoin mining without managing noisy physical equipment.</p>
+                        <button type="button" class="btn-card-action">
+                            <span class="btn-text">Select Product</span>
+                            <span class="arrow-icon">→</span>
+                        </button>
                     </div>
 
-                    <!-- Pro Plan (Active) -->
+                    <!-- Продукт 2: DeFi Staking (АКТИВНИЙ за замовчуванням) -->
                     <div class="crypto-card active">
-                        <h2 class="crypto-name">Pro Miner</h2>
-                        <div class="plan-price">$899 <span>/ contract</span></div>
-                        <p class="crypto-description">High performance computing optimized for Bitcoin and Ethereum mining efficiency.</p>
-                        <ul class="plan-features">
-                            <li>✓ Hashrate: 55 TH/s</li>
-                            <li>✓ Low energy tariff ($0.04/kWh)</li>
-                            <li>✓ Instant daily payouts</li>
-                            <li>✓ Dedicated support manager</li>
-                        </ul>
-                        <a href="#" class="btn-card-action"><span>Choose Plan</span><span class="arrow-icon">→</span></a>
+                        <div class="crypto-icon icon-stake">⚡</div>
+                        <h2 class="crypto-name">Smart Staking <span class="crypto-ticker">APY 14%</span></h2>
+                        <div class="plan-price">$499 <span>/ contract</span></div>
+                        <p class="crypto-description">Fixed yield generation on Ethereum and stablecoins with zero operational lockup fees.</p>
+                        <button type="button" class="btn-card-action">
+                            <span class="btn-text">Select Product</span>
+                            <span class="arrow-icon">→</span>
+                        </button>
                     </div>
 
-                    <!-- Enterprise Plan -->
+                    <!-- Продукт 3: Hardware Colocation (Розміщення ASICs у дата-центрі) -->
                     <div class="crypto-card">
-                        <h2 class="crypto-name">Enterprise ASIC</h2>
-                        <div class="plan-price">$2,499 <span>/ contract</span></div>
-                        <p class="crypto-description">Institutional-grade infrastructure with industrial colocation and maximum ROI.</p>
-                        <ul class="plan-features">
-                            <li>✓ Hashrate: 180 TH/s</li>
-                            <li>✓ Custom pool allocation</li>
-                            <li>✓ 99.9% uptime SLA</li>
-                        </ul>
-                        <a href="#" class="btn-card-action"><span>Choose Plan</span><span class="arrow-icon">→</span></a>
+                        <div class="crypto-icon icon-server">🖥️</div>
+                        <h2 class="crypto-name">ASIC Hosting <span class="crypto-ticker">RACK</span></h2>
+                        <div class="plan-price">$1,299 <span>/ unit</span></div>
+                        <p class="crypto-description">Deploy your own mining hardware in our green hydro-cooled industrial data facilities.</p>
+                        <button type="button" class="btn-card-action">
+                            <span class="btn-text">Select Product</span>
+                            <span class="arrow-icon">→</span>
+                        </button>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -100,6 +98,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Скрипт перемикання активної картки при кліку -->
+    <script>
+        const cards = document.querySelectorAll('.products-section .crypto-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Знімаємо active з усіх карток
+                cards.forEach(c => c.classList.remove('active'));
+                // Додаємо active тій, по якій клікнули
+                card.classList.add('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
