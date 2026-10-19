@@ -882,3 +882,119 @@ ul {
 .social-icon:hover img {
     transform: translateY(-3px);
 }
+/* --- СТИЛІ ДЛЯ ПІДПОРЯДКОВАНИХ СТОРІНОК --- */
+.page-dark {
+    background-color: #0d0d2b;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex: 1;
+}
+
+.subpage-hero {
+    text-align: center;
+    padding: 60px 0 40px 0;
+}
+
+.subpage-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.subpage-subtitle {
+    font-size: 18px;
+    color: #e0e0e0;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Активна вкладка в навігації */
+.nav-link.active-link {
+    color: #3671e9;
+    font-weight: 600;
+}
+
+/* Ціни та список для тарифів (products.html) */
+.plan-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3671e9;
+    margin: 10px 0 15px 0;
+}
+
+.crypto-card.active .plan-price {
+    color: #ffffff;
+}
+
+.plan-price span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #828282;
+}
+
+.crypto-card.active .plan-price span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+}
+
+/* Блоки про компанію (about.html) */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-bottom: 60px;
+}
+
+.about-text-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.about-text-card h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: #3671e9;
+}
+
+.about-text-card p {
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Форма для contact.html */
+.contact-section {
+    padding-bottom: 80px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-field label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0d0d2b;
+}
