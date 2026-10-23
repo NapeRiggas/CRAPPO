@@ -28,10 +28,14 @@ ul {
     padding: 0 20px;
 }
 
-/* ШАПКА */
+/* ========================================================= */
+/* ШАПКА ТА НАВІГАЦІЯ (З БУРГЕРОМ СПРАВА)                    */
+/* ========================================================= */
 .header {
     padding: 30px 0;
     background-color: transparent;
+    position: relative;
+    z-index: 50;
 }
 
 .header-container {
@@ -49,9 +53,48 @@ ul {
     letter-spacing: 0.04em;
 }
 
+.logo-img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Блок праворуч: Меню + Бургер + Кнопки Login/Register */
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+/* Меню, яке приховане ліворуч від бургера */
+.nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-right: 24px;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateX(30px);
+    transition: max-width 0.4s ease, opacity 0.3s ease, transform 0.35s ease;
+}
+
+/* Коли бургер натиснутий — меню висувається вліво */
+.nav.active {
+    opacity: 1;
+    max-width: 600px;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
 .nav-list {
     display: flex;
+    flex-direction: row;
     gap: 32px;
+    white-space: nowrap;
 }
 
 .nav-link {
@@ -60,10 +103,50 @@ ul {
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active-link {
     color: #3671E9;
+    font-weight: 600;
 }
 
+/* Кнопка бургера (3 палички біля кнопки Login) */
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 28px;
+    z-index: 100;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Анімація перетворення бургера в хрестик */
+.burger.active span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Кнопки входу праворуч */
 .header-actions {
     display: flex;
     align-items: center;
@@ -89,6 +172,7 @@ ul {
     padding: 12px 32px;
     border-radius: 32px;
     font-size: 16px;
+    font-weight: 500;
     transition: background-color 0.3s ease;
 }
 
@@ -96,7 +180,9 @@ ul {
     background-color: #2b5bc7;
 }
 
-/* HERO SECTION */
+/* ========================================================= */
+/* HERO SECTION                                              */
+/* ========================================================= */
 .hero {
     padding: 60px 0 100px 0;
 }
@@ -191,7 +277,9 @@ ul {
     height: auto;
 }
 
-/* STATS */
+/* ========================================================= */
+/* STATS SECTION                                             */
+/* ========================================================= */
 .stats {
     padding: 60px 0;
     background-color: transparent;
@@ -212,23 +300,19 @@ ul {
 }
 
 .stats-icon-box {
-    /* Фоновий круг повністю прибрано */
     background-color: transparent; 
-    
-    /* Скидаємо великі фіксовані розміри */
     width: auto;
     height: auto;
-    
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .stats-icon {
-    /* Можна трішки збільшити самі іконки, якщо без круга вони здадуться малими */
     max-width: 70px; 
     height: auto;
 }
+
 .stats-number {
     font-size: 40px;
     font-weight: 700;
@@ -241,7 +325,9 @@ ul {
     color: #E0E0E0;
 }
 
-/* WHY CHOOSE US */
+/* ========================================================= */
+/* WHY CHOOSE US                                             */
+/* ========================================================= */
 .why-choose {
     padding: 100px 0;
     background-color: transparent;
@@ -299,7 +385,9 @@ ul {
     background-color: #2b5bc7;
 }
 
-/* CALCULATOR SECTION */
+/* ========================================================= */
+/* CALCULATOR SECTION                                        */
+/* ========================================================= */
 .calc-section {
     padding: 80px 0 0 0;
     background-color: #0D0D2B;
@@ -417,10 +505,12 @@ ul {
     color: #828282;
 }
 
-/* WHITE SPACE SECTION */
+/* ========================================================= */
+/* WHITE SPACE SECTION (INDEX PAGE CARDS)                    */
+/* ========================================================= */
 .white-space-section {
     background-color: #F8F9FA;
-    padding: 300px 0 100px 0; /* Збільшили відступ, щоб текст «відлетів» від картки вниз */
+    padding: 300px 0 100px 0;
     text-align: center;
 }
 
@@ -432,6 +522,7 @@ ul {
     margin: 0 auto;
     line-height: 1.4;
 }
+
 .crypto-cards-container {
     display: flex;
     justify-content: space-between;
@@ -440,7 +531,7 @@ ul {
     margin-top: 64px;
 }
 
-/* Базова неактивна картка (біла) */
+/* Базова картка головної сторінки */
 .crypto-card {
     background-color: #FFFFFF;
     border-radius: 16px;
@@ -452,7 +543,6 @@ ul {
     text-align: center;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
     cursor: pointer;
-    /* Плавний перехід для анімації збільшення та кольору */
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -495,7 +585,7 @@ ul {
     max-width: 280px;
 }
 
-/* Кнопка всередині картки за замовчуванням (коли картка біла) */
+/* Кнопка на головній сторінці */
 .crypto-card .btn-card-active {
     width: 64px;
     height: 64px;
@@ -507,12 +597,13 @@ ul {
     color: #3671E9;
     margin-top: auto;
     background: transparent;
-    transition: all 0.4s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Ховаємо текст кнопки "Start mining", коли картка неактивна */
 .crypto-card .btn-card-active .btn-text {
     display: none;
+    white-space: nowrap;
 }
 
 .crypto-card .btn-card-active .btn-arrow-small {
@@ -520,14 +611,16 @@ ul {
     color: #3671E9;
     font-size: 24px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
-
-/* АКТИВНИЙ СТАН КАРТКИ (при натисканні) */
+/* Активна картка на головній сторінці */
 .crypto-card.active-card {
     background-color: #2B076E;
     box-shadow: 0px 20px 40px rgba(43, 7, 110, 0.2);
-    /* АНІМАЦІЯ ЗБІЛЬШЕННЯ */
     transform: scale(1.05); 
     z-index: 2;
 }
@@ -544,47 +637,9 @@ ul {
     color: #FFFFFF;
 }
 
-/* Перетворення кнопки на велику синю кнопку, коли картка стає активною */
-.crypto-card .btn-card-active {
-    width: 64px;
-    height: 64px;
-    border: 2px solid #E0E0E0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #3671E9;
-    margin-top: auto; /* Виштовхує в самий вниз */
-    background: transparent;
-    cursor: pointer;
-    /* Додаємо анімацію для властивостей, які змінюються */
-    transition: width 0.3s ease, height 0.3s ease, padding 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
-}
-
-/* Приховуємо текст кнопки, коли вона кругла */
-.crypto-card .btn-card-active .btn-text {
-    display: none;
-    white-space: nowrap;
-}
-
-/* Стрілка всередині круглого стану */
-.crypto-card .btn-card-active .btn-arrow-small {
-    background: transparent;
-    color: #3671E9;
-    font-size: 24px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-/* ======================================================= */
-/* АКТИВНИЙ СТАН КНОПКИ (коли картка стала темно-синьою) */
-/* ======================================================= */
 .crypto-card.active-card .btn-card-active {
-    width: 200px; /* Задаємо фіксовану ширину для овалу, щоб текст вліз */
-    height: 64px; /* ВИСОТА ЗАЛИШАЄТЬСЯ ТОЧНО ТАКОЮ Ж (64px), ЯК І У КРУГЛОЇ КНОПКИ */
+    width: 200px;
+    height: 64px;
     border: none;
     border-radius: 32px;
     background-color: #3671E9;
@@ -592,18 +647,16 @@ ul {
     padding: 0 24px;
     display: inline-flex;
     align-items: center;
-    justify-content: space-between; /* Текст ліворуч, стрілка праворуч */
+    justify-content: space-between;
     gap: 12px;
 }
 
-/* Показуємо текст кнопки в активному стані */
 .crypto-card.active-card .btn-card-active .btn-text {
     display: inline-block;
     font-size: 16px;
     font-weight: 600;
 }
 
-/* Біле коло навколо стрілки в активному стані */
 .crypto-card.active-card .btn-card-active .btn-arrow-small {
     background-color: #FFFFFF;
     color: #3671E9;
@@ -613,25 +666,12 @@ ul {
     font-size: 16px;
 }
 
-
-/* ШАБЛОН ДЛЯ СВІТЛОЇ СЕКЦІЇ */
-.white-space-section {
-    background-color: #F8F9FA;
-    padding: 300px 0 100px 0;
-    text-align: center;
-}
-
-.white-section-title {
-    color: #0D0D2B;
-    font-size: 40px;
-    font-weight: 700;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.4;
-}
+/* ========================================================= */
+/* FEATURES SECTION                                          */
+/* ========================================================= */
 .features-section {
     padding: 100px 0;
-    background-color: #0D0D2B; /* Повертаємо фірмовий темний фон */
+    background-color: #0D0D2B;
 }
 
 .features-main-title {
@@ -643,16 +683,14 @@ ul {
     line-height: 1.4;
 }
 
-/* Базовий рядок для шахматки */
 .feature-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 80px;
-    margin-bottom: 120px; /* Відступ між блоками */
+    margin-bottom: 120px;
 }
 
-/* Клас-модифікатор для розвороту колонок (шахматка) */
 .feature-row.row-reverse {
     flex-direction: row-reverse;
 }
@@ -688,7 +726,9 @@ ul {
     object-fit: contain;
 }
 
-/* СТИЛІ СИНЬОЇ ПЛАШКИ (CTA) */
+/* ========================================================= */
+/* CTA BLUE BOX                                              */
+/* ========================================================= */
 .cta-blue-box {
     background: linear-gradient(135deg, #3671E9 0%, #2B5BC7 100%);
     border-radius: 16px;
@@ -766,8 +806,12 @@ ul {
     background-color: #F8F9FA;
     transform: translateY(-2px);
 }
+
+/* ========================================================= */
+/* FOOTER                                                    */
+/* ========================================================= */
 .footer {
-    background-color: #0D0D2B; /* Темний фон, єдиний з попередньою секцією */
+    background-color: #0D0D2B;
     padding: 80px 0 60px 0;
 }
 
@@ -784,11 +828,11 @@ ul {
 }
 
 .footer-logo-col {
-    flex: 1.2; /* Робимо колонку з лого трохи ширшою */
+    flex: 1.2;
 }
 
 .footer-payments-col {
-    flex: 2; /* Колонка з платіжками найбільша */
+    flex: 2;
     max-width: 360px;
 }
 
@@ -807,9 +851,11 @@ ul {
     color: #FFFFFF;
 }
 
-.footer-links display: flex;
-.footer-links flex-direction: column;
-.footer-links gap: 16px;
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 
 .footer-links a {
     color: #F2F2F2;
@@ -821,14 +867,12 @@ ul {
     color: #3671E9;
 }
 
-/* Картки платіжних систем */
 .payment-systems {
     display: flex;
     gap: 24px;
 }
 
 .payment-card {
-    /* Робимо один загальний напівпрозорий фон для картки */
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     width: 96px;
@@ -839,22 +883,18 @@ ul {
     transition: background-color 0.3s ease;
 }
 
-/* Прибираємо будь-який внутрішній фон або рамки безпосередньо з картинок */
 .payment-card img {
     max-width: 70%;
     max-height: 70%;
     height: auto;
     object-fit: contain;
-    background: transparent !important; /* Насильно прибираємо фон картинки */
-    background-color: transparent !important;
+    background: transparent !important;
 }
 
-/* Ефект при наведенні мишкою — картка стає трохи яскравішою */
 .payment-card:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* НИЖНЯ ЧАСТИНА ФУТЕРА */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -882,7 +922,10 @@ ul {
 .social-icon:hover img {
     transform: translateY(-3px);
 }
-/* --- СТИЛІ ДЛЯ ПІДПОРЯДКОВАНИХ СТОРІНОК --- */
+
+/* ========================================================= */
+/* СТИЛІ ДЛЯ ПІДПОРЯДКОВАНИХ СТОРІНОК                        */
+/* ========================================================= */
 .page-dark {
     background-color: #0d0d2b;
     color: #ffffff;
@@ -913,45 +956,6 @@ ul {
     max-width: 650px;
     margin: 0 auto;
     line-height: 1.6;
-}
-
-/* Активна вкладка в навігації */
-.nav-link.active-link {
-    color: #3671e9;
-    font-weight: 600;
-}
-
-/* Ціни та список для тарифів (products.html) */
-.plan-price {
-    font-size: 32px;
-    font-weight: 700;
-    color: #3671e9;
-    margin: 10px 0 15px 0;
-}
-
-.crypto-card.active .plan-price {
-    color: #ffffff;
-}
-
-.plan-price span {
-    font-size: 14px;
-    font-weight: 400;
-    color: #828282;
-}
-
-.crypto-card.active .plan-price span {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.plan-features {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 14px;
 }
 
 /* Блоки про компанію (about.html) */
@@ -998,7 +1002,10 @@ ul {
     font-weight: 600;
     color: #0d0d2b;
 }
-/* Ряд карток */
+
+/* ========================================================= */
+/* СЕКЦІЯ ТАРИФІВ (PRODUCTS.HTML)                            */
+/* ========================================================= */
 .products-section .cards-grid {
     display: flex;
     justify-content: center;
@@ -1009,7 +1016,6 @@ ul {
     padding: 20px 15px 80px 15px;
 }
 
-/* Базова картка (біла) */
 .products-section .crypto-card {
     background-color: #ffffff;
     border-radius: 16px;
@@ -1021,15 +1027,12 @@ ul {
     align-items: center;
     text-align: center;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Активна картка (темно-фіолетова) */
-.products-section .crypto-card.active {
-    background-color: #2b076e;
-    box-shadow: 0px 20px 40px rgba(43, 7, 110, 0.25);
-}
-
-/* Іконки криптовалют */
+/* Іконки сервісів */
 .crypto-icon {
     width: 80px;
     height: 80px;
@@ -1043,11 +1046,13 @@ ul {
     margin-bottom: 20px;
 }
 
+.icon-cloud { background-color: #3671e9; }
+.icon-stake { background-color: #f7931a; }
+.icon-server { background-color: #2b076e; border: 1px solid rgba(255, 255, 255, 0.15); }
 .btc-icon { background-color: #f7931a; }
 .eth-icon { background-color: #3671e9; }
 .ltc-icon { background-color: #345d9d; }
 
-/* Назва та тікер */
 .products-section .crypto-name {
     font-size: 24px;
     font-weight: 700;
@@ -1055,30 +1060,11 @@ ul {
     color: #0d0d2b;
 }
 
-.products-section .crypto-card.active .crypto-name {
-    color: #ffffff;
-}
-
-.crypto-ticker {
-    font-size: 14px;
-    font-weight: 500;
-    color: #bdbdbd;
-}
-
-.products-section .crypto-card.active .crypto-ticker {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Ціна */
 .plan-price {
     font-size: 32px;
     font-weight: 700;
     color: #3671e9;
     margin: 0 0 16px 0;
-}
-
-.products-section .crypto-card.active .plan-price {
-    color: #ffffff;
 }
 
 .plan-price span {
@@ -1087,11 +1073,6 @@ ul {
     color: #828282;
 }
 
-.products-section .crypto-card.active .plan-price span {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* Опис */
 .products-section .crypto-description {
     font-size: 15px;
     line-height: 1.6;
@@ -1099,52 +1080,7 @@ ul {
     margin-bottom: 32px;
 }
 
-.products-section .crypto-card.active .crypto-description {
-    color: #ffffff;
-}
-
-/* Кнопка-стрілочка для звичайних карток */
-.products-section .crypto-card .btn-card-action {
-    margin-top: auto;
-    width: 48px;
-    height: 48px;
-    border: 2px solid #e0e0e0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #3671e9;
-    font-size: 20px;
-    transition: all 0.3s ease;
-}
-
-.products-section .crypto-card .btn-card-action:hover {
-    border-color: #3671e9;
-    background-color: rgba(54, 113, 233, 0.05);
-}
-
-/* Велика синя кнопка для активної картки */
-.products-section .crypto-card.active .btn-card-action {
-    background-color: #3671e9;
-    border: none;
-    width: auto;
-    height: auto;
-    padding: 14px 28px;
-    border-radius: 32px;
-    color: #ffffff;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 16px;
-    font-weight: 600;
-}
-/* Кольори для іконок нових послуг */
-.icon-cloud { background-color: #3671e9; }
-.icon-stake { background-color: #f7931a; }
-.icon-server { background-color: #2b076e; border: 1px solid rgba(255, 255, 255, 0.15); }
-
-/* Клік по всій картці виглядає природно */
+/* 1. Кнопка неактивна (кругла зі стрілочкою) */
 .products-section .crypto-card .btn-card-action {
     width: 64px !important;
     height: 64px !important;
@@ -1159,16 +1095,14 @@ ul {
     cursor: pointer !important;
     padding: 0 !important;
     margin-top: auto !important;
-    overflow: hidden !important; /* Обрізає будь-що зайве */
+    overflow: hidden !important;
     transition: all 0.35s ease !important;
 }
 
-/* ЗАБОРОНЯЄМО тексту показуватися в круглій кнопці */
 .products-section .crypto-card .btn-card-action .btn-text {
     display: none !important;
 }
 
-/* Стрілочка по центру */
 .products-section .crypto-card .btn-card-action .arrow-icon {
     font-size: 24px !important;
     font-weight: 700 !important;
@@ -1181,13 +1115,32 @@ ul {
     height: auto !important;
 }
 
-
-/* 2. АКТИВНИЙ СТАН: Картка вибрана (.active) */
+/* 2. Картка вибрана (.active) */
 .products-section .crypto-card.active {
     background-color: #2B076E !important;
-    transform: scale(1.05) !important; /* Картка стає більшою */
+    transform: scale(1.05) !important;
     box-shadow: 0px 25px 50px rgba(43, 7, 110, 0.4) !important;
     z-index: 2 !important;
+}
+
+.products-section .crypto-card.active .crypto-name {
+    color: #ffffff !important;
+}
+
+.products-section .crypto-card.active .crypto-ticker {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.products-section .crypto-card.active .plan-price {
+    color: #ffffff !important;
+}
+
+.products-section .crypto-card.active .plan-price span {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.products-section .crypto-card.active .crypto-description {
+    color: #ffffff !important;
 }
 
 /* Кнопка розгортається у великий синій овал */
@@ -1201,10 +1154,9 @@ ul {
     padding: 0 16px 0 24px !important;
     justify-content: space-between !important;
     box-shadow: 0px 10px 25px rgba(54, 113, 233, 0.4) !important;
-    transform: scale(1.03) !important; /* Кнопка теж стає трохи більшою */
+    transform: scale(1.03) !important;
 }
 
-/* Текст Select Product з'являється тільки тут */
 .products-section .crypto-card.active .btn-card-action .btn-text {
     display: inline-block !important;
     font-size: 16px !important;
@@ -1213,7 +1165,6 @@ ul {
     white-space: nowrap !important;
 }
 
-/* Стрілочка береться в біле коло */
 .products-section .crypto-card.active .btn-card-action .arrow-icon {
     background-color: #FFFFFF !important;
     color: #3671E9 !important;
@@ -1222,4 +1173,115 @@ ul {
     min-width: 38px !important;
     border-radius: 50% !important;
     font-size: 18px !important;
+}
+
+/* ========================================================= */
+/* СТИЛІ МОДАЛЬНОГО ВІКНА (POPUP)                            */
+/* ========================================================= */
+.modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(13, 13, 43, 0.75) !important;
+    backdrop-filter: blur(6px) !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 99999 !important;
+}
+
+.modal-overlay.active {
+    display: flex !important;
+}
+
+.modal-window {
+    background-color: #ffffff !important;
+    color: #0d0d2b !important;
+    width: 90% !important;
+    max-width: 440px !important;
+    padding: 40px 32px !important;
+    border-radius: 16px !important;
+    position: relative !important;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3) !important;
+    animation: modalSlideIn 0.3s ease !important;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: #828282;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #0d0d2b;
+}
+
+.modal-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #0d0d2b;
+    text-align: center;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2b076e;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #3671e9;
+}
+
+.modal-submit {
+    width: 100%;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 14px;
 }
