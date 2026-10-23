@@ -13,11 +13,12 @@
 
     <!-- Header -->
     <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/icons/logot.svg" alt="CRAPPO" class="logo-img">
-                <span>CRAPPO</span>
-            </a>
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="assets/images/icons/logot.svg" alt="CRAPPO" class="logo-img">
+            <span>CRAPPO</span>
+        </a>
+        <div class="header-right-group">
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -27,13 +28,19 @@
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+            <button class="burger" id="burgerBtn" aria-label="Toggle menu" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="header-actions">
                 <a href="#" class="btn-login">Login</a>
                 <span class="divider">|</span>
                 <a href="#" class="btn-register">Register</a>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Main Content -->
     <main class="page-content">
@@ -113,5 +120,38 @@
         });
     </script>
 
+<!-- Модальне вікно Login/Register -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-window">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h2 class="modal-title" id="modalTitle">Login to CRAPPO</h2>
+            <form class="modal-form" onsubmit="event.preventDefault(); alert('Success! Welcome to CRAPPO.'); document.getElementById('authModal').classList.remove('active');">
+    <div class="form-group">
+        <label for="modalEmail">Email Address</label>
+        <input 
+            type="email" 
+            id="modalEmail" 
+            placeholder="yourname@domain.com" 
+            required
+            oninvalid="this.setCustomValidity(this.validity.valueMissing ? 'Please fill out this field.' : 'Please enter a valid email address.')"
+            oninput="this.setCustomValidity('')">
+    </div>
+    <div class="form-group">
+        <label for="modalPassword">Password</label>
+        <input 
+            type="password" 
+            id="modalPassword" 
+            placeholder="••••••••" 
+            required
+            oninvalid="this.setCustomValidity('Please fill out this field.')"
+            oninput="this.setCustomValidity('')">
+    </div>
+    <button type="submit" class="btn-primary modal-submit" id="modalSubmitBtn">Log In</button>
+</form>
+        </div>
+    </div>
+
+    <!-- Головний JS-файл -->
+    <script src="scripts/main.js"></script>
 </body>
 </html>

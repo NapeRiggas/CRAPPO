@@ -14,28 +14,34 @@
 
     <!-- Header -->
     <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="assets/images/icons/logot.svg" alt="CRAPPO" class="logo-img">
-                <span>CRAPPO</span>
-            </a>
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <img src="assets/images/icons/logot.svg" alt="CRAPPO" class="logo-img">
+            <span>CRAPPO</span>
+        </a>
+        <div class="header-right-group">
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="products.html" class="nav-link">Products</a></li>
-                    <li><a href="#" class="nav-link">Features</a></li>
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="contact.html" class="nav-link active-link">Contact</a></li>
                 </ul>
             </nav>
+            <button class="burger" id="burgerBtn" aria-label="Toggle menu" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="header-actions">
                 <a href="#" class="btn-login">Login</a>
                 <span class="divider">|</span>
                 <a href="#" class="btn-register">Register</a>
             </div>
         </div>
-    </header>
-
+    </div>
+</header>
     <!-- Contact Content -->
     <main class="page-content">
         <section class="subpage-hero">
@@ -49,20 +55,41 @@
             <div class="container">
                 <div class="calc-card" style="max-width: 650px;">
                     <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-                        <div class="form-field">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="calc-input" placeholder="e.g. Alex Miller" required>
-                        </div>
-                        <div class="form-field">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="calc-input" placeholder="name@domain.com" required>
-                        </div>
-                        <div class="form-field">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="calc-input" rows="4" placeholder="How can we help you?" style="resize: vertical;"></textarea>
-                        </div>
-                        <button type="submit" class="btn-calc" style="width: 100%; border: none; cursor: pointer; margin-top: 15px;">Send Inquiry</button>
-                    </form>
+    <div class="form-field">
+        <label for="name">Your Name</label>
+        <input 
+            type="text" 
+            id="name" 
+            class="calc-input" 
+            placeholder="e.g. Alex Miller" 
+            required
+            oninvalid="this.setCustomValidity('Please enter your name.')"
+            oninput="this.setCustomValidity('')">
+    </div>
+    <div class="form-field">
+        <label for="email">Email Address</label>
+        <input 
+            type="email" 
+            id="email" 
+            class="calc-input" 
+            placeholder="name@domain.com" 
+            required
+            oninvalid="this.setCustomValidity(this.validity.valueMissing ? 'Please enter your email address.' : 'Please enter a valid email address.')"
+            oninput="this.setCustomValidity('')">
+    </div>
+    <div class="form-field">
+    <label for="email">Email Address</label>
+    <input 
+        type="email" 
+        id="email" 
+        class="calc-input" 
+        placeholder="name@domain.com" 
+        required
+        oninvalid="this.setCustomValidity(this.validity.typeMismatch ? 'Please include an @ in the email address.' : 'Please enter your email address.')"
+        oninput="this.setCustomValidity('')">
+</div>
+    <button type="submit" class="btn-calc" style="width: 100%; border: none; cursor: pointer; margin-top: 15px;">Send Inquiry</button>
+</form>
                 </div>
             </div>
         </section>
@@ -76,6 +103,38 @@
             </div>
         </div>
     </footer>
+<!-- Модальне вікно Login/Register -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-window">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h2 class="modal-title" id="modalTitle">Login to CRAPPO</h2>
+            <form class="modal-form" onsubmit="event.preventDefault(); alert('Success! Welcome to CRAPPO.'); document.getElementById('authModal').classList.remove('active');">
+    <div class="form-group">
+        <label for="modalEmail">Email Address</label>
+        <input 
+            type="email" 
+            id="modalEmail" 
+            placeholder="yourname@domain.com" 
+            required
+            oninvalid="this.setCustomValidity(this.validity.valueMissing ? 'Please fill out this field.' : 'Please enter a valid email address.')"
+            oninput="this.setCustomValidity('')">
+    </div>
+    <div class="form-group">
+        <label for="modalPassword">Password</label>
+        <input 
+            type="password" 
+            id="modalPassword" 
+            placeholder="••••••••" 
+            required
+            oninvalid="this.setCustomValidity('Please fill out this field.')"
+            oninput="this.setCustomValidity('')">
+    </div>
+    <button type="submit" class="btn-primary modal-submit" id="modalSubmitBtn">Log In</button>
+</form>
+        </div>
+    </div>
 
+    <!-- Головний JS-файл -->
+    <script src="scripts/main.js"></script>і
 </body>
 </html>
